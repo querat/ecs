@@ -10,8 +10,6 @@
 
 #include <ecs/Engine.h>
 
-const float FPS = 60;
-
 int main(int ac, char *av[])
 {
     (void)ac, (void)av;

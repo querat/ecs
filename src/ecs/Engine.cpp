@@ -12,16 +12,27 @@ void Engine::update(float deltaTime) {
     (void)deltaTime;
 }
 
+void Engine::syncWithFrameRate(long deltaTimeMs) const {
+    float dfFloat = static_cast<float>(deltaTimeMs);
+
+    int timeRemainingForCurFrame = static_cast<int>(mMilliSecondsPerFrame - dfFloat);
+    if (timeRemainingForCurFrame > 0) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(timeRemainingForCurFrame));
+        std::cout << "slept for " << timeRemainingForCurFrame << " milliseconds" << std::endl;
+    }
+}
+
 void Engine::mainLoop() {
     bool    stopping = false;
     Timer   timer;
-    float   deltaTime = 0.f;
+    long    deltaTime = 0;
 
     while (not stopping) {
+
+
         deltaTime = timer.calcDeltaTimeInMs();
+        syncWithFrameRate(deltaTime);
 
-        std::this_thread::sleep_for(std::chrono::milliseconds(42));
 
-        std::cout << "delta: " << deltaTime << std::endl;
     }
 }

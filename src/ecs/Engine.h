@@ -8,12 +8,19 @@
 
 class Engine {
 
+private:
+    float   mFrameRate = 60;
+    float   mMilliSecondsPerFrame = 1000.f / mFrameRate;
+
 public:
     Engine() = default;
     ~Engine() = default;
 
     void mainLoop();
     void update(float deltaTime);
+
+private:
+    void syncWithFrameRate(long deltaTimeMs) const;
 };
 
 

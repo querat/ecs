@@ -1,0 +1,3 @@
+/home/querat/workspace/perso/allegro/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/querat/workspace/perso/allegro/cmake-build-debug/CMakeFiles/allegro.dir
+/home/querat/workspace/perso/allegro/cmake-build-debug/CMakeFiles/edit_cache.dir

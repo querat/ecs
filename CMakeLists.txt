@@ -20,12 +20,7 @@ add_executable(
         src/ecs/System.cpp
         src/ecs/System.h
 
-        src/EBall.h
-
-        src/SMovement.cpp
-        src/SMovement.h
-
-        src/CPosition.cpp src/CPosition.h src/ecs/Engine.cpp src/ecs/Engine.h src/ecs/Timer.cpp src/ecs/Timer.h)
+        src/ecs/Engine.cpp src/ecs/Engine.h src/ecs/Timer.cpp src/ecs/Timer.h)
 
 target_link_libraries(allegro -lallegro)
 include_directories(src)
