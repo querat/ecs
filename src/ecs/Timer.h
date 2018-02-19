@@ -7,21 +7,29 @@
 
 #include <chrono>
 
+// auto currentTime = std::chrono::steady_clock::now();
+// auto elapsed = previousTime - currentTime;
+//
+// ... do stuff with elapsed time...
+// float elapsed_f = elapsed.count();
+//
+// previousTime = currentTime;
+
 class Timer {
 
     using tClock        = std::chrono::high_resolution_clock;
-    using tMillisecond  = std::chrono::duration<float, std::ratio<1>>
+    using tMilliseconds = std::chrono::milliseconds;
+    using tTimePoint    = std::chrono::time_point<tClock>;
 
 private:
 
-    auto mLastTimeSample = ;
+    tTimePoint mLastTimeSample;
 
 public:
-    Timer() = default;
+    Timer();
     ~Timer() = default;
-
-    float   calcTimeElapsedSinceLastCall();
-
+    long calcDeltaTimeInMs();
+    void reset();
 };
 
 

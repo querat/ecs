@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <zconf.h>
+#include <thread>
 #include "Engine.h"
 #include "Timer.h"
 
@@ -17,9 +18,10 @@ void Engine::mainLoop() {
     float   deltaTime = 0.f;
 
     while (not stopping) {
-        deltaTime = timer.calcTimeElapsedSinceLastCall();
+        deltaTime = timer.calcDeltaTimeInMs();
 
-        usleep(42000);
+        std::this_thread::sleep_for(std::chrono::milliseconds(42));
+
         std::cout << "delta: " << deltaTime << std::endl;
     }
 }
