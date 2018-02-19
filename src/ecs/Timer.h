@@ -28,7 +28,7 @@ private:
 public:
     Timer();
     ~Timer() = default;
-    long calcDeltaTimeInMs();
+    float calcDeltaTimeInMs();
     void reset();
 };
 

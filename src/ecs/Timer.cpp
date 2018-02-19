@@ -9,7 +9,7 @@ Timer::Timer() {
     mLastTimeSample = tClock::now();
 }
 
-long Timer::calcDeltaTimeInMs() {
+float Timer::calcDeltaTimeInMs() {
     tTimePoint now = tClock::now();
 
     // STL is such an ugly piece of code

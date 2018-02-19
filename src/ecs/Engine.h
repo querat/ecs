@@ -20,7 +20,7 @@ public:
     void update(float deltaTime);
 
 private:
-    void syncWithFrameRate(long deltaTimeMs) const;
+    void syncWithFrameRate(float timeElapsed) const;
 };
 
 
