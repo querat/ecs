@@ -3,7 +3,6 @@
 //
 
 #include <iostream>
-#include <time.h>
 #include <thread>
 #include "Engine.h"
 #include "Timer.h"
